@@ -14,3 +14,11 @@ it('should change color to blue once clicked', function () {
     fireEvent.click(btn)
     expect(btn).toHaveStyle({backgroundColor: 'blue'})
 });
+
+it('should have the initial state as red and enabled with unchecked checkbox', function () {
+    render(<App />)
+    const btn = screen.getByRole('button', {name : /change to blue/i})
+    const checkbox = screen.getByRole('checkbox')
+    expect(btn).toBeEnabled()
+    expect(checkbox).not.toBeChecked()
+});

@@ -3,9 +3,9 @@ import {useState} from "react";
 
 function App() {
     const [color, setColor] = useState('red');
-    const newBtnColor = color === 'red' ? 'blue': 'red'
+    const newBtnColor = color === 'red' ? 'blue' : 'red'
     const handleColorChange = () => {
-            setColor(prev => prev === 'red' ? 'blue': 'red')
+        setColor(prev => prev === 'red' ? 'blue' : 'red')
     }
     return (
         <div>
@@ -15,7 +15,9 @@ function App() {
             >
                 Change to {newBtnColor}
             </button>
-
+            <input
+                type={"checkbox"}
+            />
         </div>
     );
 }
