@@ -10,7 +10,7 @@ function App() {
     return (
         <div>
             <button
-                style={{backgroundColor: color}}
+                className={color}
                 onClick={handleColorChange}
             >
                 Change to {newBtnColor}
