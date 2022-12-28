@@ -22,3 +22,14 @@ it('should have the initial state as red and enabled with unchecked checkbox', f
     expect(btn).toBeEnabled()
     expect(checkbox).not.toBeChecked()
 });
+
+it('should disable the button when the checkbox is checked', function () {
+    render(<App />)
+    const btn = screen.getByRole('button', {name: /change to blue/i})
+    const checkbox = screen.getByRole('checkbox')
+    expect(btn).toBeEnabled()
+    expect(checkbox).not.toBeChecked()
+    fireEvent.click(checkbox)
+    expect(checkbox).toBeChecked()
+    expect(btn).toBeDisabled()
+});
