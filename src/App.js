@@ -15,7 +15,7 @@ function App() {
     return (
         <div>
             <button
-                className={color}
+                className={disabled ? 'disabled': color}
                 onClick={handleColorChange}
                 disabled={disabled}
             >
