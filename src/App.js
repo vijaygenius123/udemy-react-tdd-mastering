@@ -1,16 +1,16 @@
+import {useState, useId} from "react";
 import './App.css';
-import {useState} from "react";
 
 function App() {
     const [color, setColor] = useState('red');
     const [disabled, setDisabled] = useState(false);
-
+    const checkboxId = useId()
     const newBtnColor = color === 'red' ? 'blue' : 'red'
     const handleColorChange = () => {
         setColor(prev => prev === 'red' ? 'blue' : 'red')
     }
     const handleCheckbox = () => {
-        setDisabled(prev => prev === true ? false : true)
+        setDisabled(prev => prev!==true)
     }
     return (
         <div>
@@ -22,10 +22,12 @@ function App() {
                 Change to {newBtnColor}
             </button>
             <input
+                id={checkboxId}
                 type={"checkbox"}
                 checked={disabled}
                 onChange={handleCheckbox}
             />
+            <label htmlFor={checkboxId}>Disable Button</label>
         </div>
     );
 }

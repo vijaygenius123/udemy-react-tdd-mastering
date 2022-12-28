@@ -18,7 +18,7 @@ it('should change color to blue once clicked', function () {
 it('should have the initial state as red and enabled with unchecked checkbox', function () {
     render(<App />)
     const btn = screen.getByRole('button', {name : /change to blue/i})
-    const checkbox = screen.getByRole('checkbox')
+    const checkbox = screen.getByRole('checkbox', {name: /disable button/i})
     expect(btn).toBeEnabled()
     expect(checkbox).not.toBeChecked()
 });
@@ -26,7 +26,7 @@ it('should have the initial state as red and enabled with unchecked checkbox', f
 it('should disable the button when the checkbox is checked', function () {
     render(<App />)
     const btn = screen.getByRole('button', {name: /change to blue/i})
-    const checkbox = screen.getByRole('checkbox')
+    const checkbox = screen.getByRole('checkbox', {name: /disable button/i})
     expect(btn).toBeEnabled()
     expect(checkbox).not.toBeChecked()
     fireEvent.click(checkbox)
